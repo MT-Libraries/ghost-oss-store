@@ -50,19 +50,19 @@ In your `config.js` file, you'll need to add a new `storage` block to whichever 
 
 ```javascript
 storage: {
-    active: 'oss-store',
-    'oss_store': {
-        accessKeyId: 'accessKeyId',
-        accessKeySecret: 'accessKeySecret',
-        bucket: 'bucket',
-        region: 'oss-cn-hangzhou',
-        origin: 'https://www.thonatos.com/',                
-        fileKey: {
-            safeString: true, // use Ghost safaString util to rename filename, e.g. Chinese to Pinyin
-            prefix: 'ghost/',  // {String | Function} will be formated by moment.js, using `[]` to escape,
-            suffix: '' // {String | Function} string added before file extname.
-        }
+  active: 'oss-store',
+  'oss_store': {
+    accessKeyId: 'accessKeyId',
+    accessKeySecret: 'accessKeySecret',
+    bucket: 'bucket',
+    region: 'oss-cn-hangzhou',
+    origin: 'https://www.thonatos.com/',                
+    fileKey: {
+      safeString: true, // use Ghost safaString util to rename filename, e.g. Chinese to Pinyin
+      prefix: 'ghost/',  // {String | Function} will be formated by moment.js, using `[]` to escape,
+      suffix: '' // {String | Function} string added before file extname.
     }
+  }
 }
 ```
 
