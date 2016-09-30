@@ -1,6 +1,6 @@
-# Ghost Aliyun Oss Storage
+# Ghost Aliyun OSS Storage
 
-This [Ghost custom storage module](https://github.com/TryGhost/Ghost/wiki/Using-a-custom-storage-module) allows you to store media file with [Aliyun Oss](https://cn.aliyun.com/product/oss) instead of storing at local machine.
+This [Ghost custom storage module](https://github.com/TryGhost/Ghost/wiki/Using-a-custom-storage-module) allows you to store media file with [Aliyun OSS](https://cn.aliyun.com/product/oss) instead of storing at local machine.
 
 ## Installation
 
