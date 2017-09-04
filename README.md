@@ -59,8 +59,8 @@ storage: {
     origin: 'https://www.thonatos.com/', // if you have bind custom domain to oss bucket. or false             
     fileKey: {
       safeString: true, // use Ghost safaString util to rename filename, e.g. Chinese to Pinyin
-      prefix: 'ghost/',  // {String | Function} will be formated by moment.js, using `[]` to escape,
-      suffix: '' // {String | Function} string added before file extname.
+      prefix: 'ghost/',  // { String } will be formated by moment.js, using `[]` to escape,
+      suffix: '' // { String } string added before file extname.
     }
   }
 }
