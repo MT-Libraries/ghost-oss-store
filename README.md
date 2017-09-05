@@ -7,6 +7,11 @@
 
 This [Ghost custom storage module](https://docs.ghost.org/docs/using-a-custom-storage-module#section-known-custom-storage-adapters) allows you to store media file with [Aliyun OSS](https://cn.aliyun.com/product/oss) instead of storing at local machine.
 
+## Supported
+
+- [x] 1.x
+- [ ] 0.x
+
 ## Installation
 
 ### Via NPM
