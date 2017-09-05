@@ -5,7 +5,7 @@
 [npm-image]: https://img.shields.io/npm/v/ghost-oss-store.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ghost-oss-store
 
-This [Ghost custom storage module](https://github.com/TryGhost/Ghost/wiki/Using-a-custom-storage-module) allows you to store media file with [Aliyun OSS](https://cn.aliyun.com/product/oss) instead of storing at local machine.
+This [Ghost custom storage module](https://docs.ghost.org/docs/using-a-custom-storage-module#section-known-custom-storage-adapters) allows you to store media file with [Aliyun OSS](https://cn.aliyun.com/product/oss) instead of storing at local machine.
 
 ## Installation
 
