@@ -6,8 +6,8 @@ var OSS = require('ali-oss').Wrapper
 
 try {
   var utils = require(path.join(process.cwd(), 'core/server/utils')) // for ghost-docker
-} catch {
-  var utils = var utils = require(path.join(process.cwd(), 'current/core/server/utils'))
+} catch (e) {
+  var utils = require(path.join(process.cwd(), 'current/core/server/utils'))
 }
 var baseStore = require('ghost-storage-base')
 
