@@ -15,6 +15,7 @@
   "dependencies": {
     "ali-oss": "^4.4.4",
     "bluebird": "^3.4.6",
-    "ghost-storage-base": "^0.0.1"
+    "ghost-storage-base": "^0.0.1",
+    "unidecode": "^0.1.8"
   }
 }
