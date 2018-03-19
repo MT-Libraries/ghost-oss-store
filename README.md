@@ -13,7 +13,7 @@ This [Ghost custom storage module](https://docs.ghost.org/docs/using-a-custom-st
 - [ ] 0.x
 
 ## Installation
-
+  
 ### Via NPM
 
 - Install Oss storage module
@@ -25,14 +25,16 @@ This [Ghost custom storage module](https://docs.ghost.org/docs/using-a-custom-st
 - Make the storage folder if it doesn't exist yet
 
   ```
-  mkdir content/storage
+  mkdir -p content/adapters/storage
   ```
   
-- Copy the module into the right location
+ - Create a script named "oss-store.js", content as follow:
+ 
+ ```js
+ //  content/adapters/storage/oss-store.js
 
-  ```
-  cp -vR node_modules/ghost-oss-store content/storage/oss-store
-  ```
+module.exports = require('ghost-oss-store');
+ ```
 
 ### Via Git
 
@@ -61,7 +63,7 @@ In your `config.js` file, you'll need to add a new `storage` block to whichever 
 ```javascript
 storage: {
   active: 'oss-store',
-  'oss_store': {
+  'oss-store': {
     accessKeyId: 'accessKeyId',
     accessKeySecret: 'accessKeySecret',
     bucket: 'bucket',
