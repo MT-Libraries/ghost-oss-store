@@ -40,12 +40,16 @@ module.exports = require('ghost-oss-store');
 
 In order to replace the storage module, the basic requirements are:
 
-- Create a new folder inside `/content` called `/storage`
+- Make the storage folder if it doesn't exist yet
+
+  ```
+  mkdir -p content/adapters/storage
+  ```
 
 - Clone this repo to `/storage`
 
   ```
-  cd [path/to/ghost]/content/storage
+  cd [path/to/ghost]/content/adapters/storage
   mkdir oss-store && cd oss-store
   git clone https://github.com/MT-Libraries/ghost-oss-store ./
   ```
@@ -57,6 +61,9 @@ In order to replace the storage module, the basic requirements are:
   ```
 
 ## Configuration
+the oss sdk options refer to [here](https://github.com/ali-sdk/ali-oss/blob/5.x/README.md#ossoptions)
+
+### with `config.js`
 
 In your `config.js` file, you'll need to add a new `storage` block to whichever environment you want to change:
 
@@ -68,6 +75,7 @@ storage: {
     accessKeySecret: 'accessKeySecret',
     bucket: 'bucket',
     region: 'oss-cn-hangzhou',
+    secure: true, // {Boolean} instruct OSS client to use HTTPS (secure: true) or HTTP (secure: false) protocol.
     origin: 'https://www.thonatos.com/', // if you have bind custom domain to oss bucket. or false             
     fileKey: {
       safeString: true, // use Ghost safaString util to rename filename, e.g. Chinese to Pinyin
@@ -77,6 +85,32 @@ storage: {
   }
 }
 ```
+
+### with `config.[environment].json`
+In your `config.[environment].json` file, you'll need to add a new `storage` block to whichever environment you want to change. Notice: the JSON file must delete all comments.
+
+```json
+{
+  ...
+  "storage": {
+  "active": "oss-store",
+  "oss-store": {
+    "accessKeyId": "accessKeyId",
+    "accessKeySecret": "accessKeySecret",
+    "bucket": "bucket",
+    "region": "oss-cn-hangzhou",
+    "secure": true, // {Boolean} instruct OSS client to use HTTPS (secure: true) or HTTP (secure: false) protocol.
+    "origin": "https://www.thonatos.com/", // if you have bind custom domain to oss bucket. or false             
+    "fileKey": {
+      "safeString": true, // use Ghost safaString util to rename filename, e.g. Chinese to Pinyin
+      "prefix": "ghost/",  // { String } will be formated by moment.js, using `[]` to escape,
+      "suffix": "" // { String } string added before file extname.
+    }
+  }
+}
+}
+```
+
 
 ## License
 
